@@ -25,6 +25,6 @@ app.use(cors(corsOptions))
 app.use('/auth', router1)
 app.use('/notes', router2)
 
-app.listen(process.env.port || 3001, () => {
-  console.log(`Example app listening on port ${process.env.port || 3001}`)
+app.listen(process.env.PORT || 3001, () => {
+  console.log(`Example app listening on port ${process.env.PORT || 3001}`)
 })
