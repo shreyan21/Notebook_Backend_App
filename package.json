@@ -19,8 +19,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "npm run build:frontend && npm run build:backend", 
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"nodemon index.js",
+    "build": " npm run build:backend", 
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:backend": "cd backend && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
