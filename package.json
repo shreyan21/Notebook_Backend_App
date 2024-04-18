@@ -10,6 +10,7 @@
     "nodemon": "3.1",
     "vercel": "^34.0.0"
   },
+  
   "engines": {
     "node": "20.10.0",
     "npm": "10.2.5"
@@ -25,6 +26,7 @@
     "build:backend": "cd backend && npm install && npm run build"
   },
   "keywords": [],
+  
   "author": "",
   "license": "ISC",
   "description": ""
