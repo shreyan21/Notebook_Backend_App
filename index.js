@@ -17,7 +17,8 @@ const corsOptions = {
     } else {
       callback(new Error('Not allowed by CORS'));
     }
-  }
+  },
+  optionsSuccessStatus: 200
 };
 app.use(express.json())
 app.use(cors(corsOptions))
