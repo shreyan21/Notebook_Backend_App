@@ -9,7 +9,7 @@ import dotenv from 'dotenv'
 const app = express()
 dotenv.config()
 run()
-const allowedOrigins = ['http://localhost:3000', 'https://example.netlify.app'];
+const allowedOrigins = ['http://localhost:3000', 'https://notedrive.netlify.app'];
 const corsOptions = {
   origin: function (origin, callback) {
     if (allowedOrigins.includes(origin) || !origin) {
