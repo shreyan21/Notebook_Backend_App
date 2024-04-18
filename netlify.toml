@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build" # Specify the build command for your backend application
+  functions = "functions"   # Specify the directory where your serverless functions are located
+
+[build.environment]
+  NODE_VERSION = "20"       # Specify the Node.js version to use during the build process
+
+[[redirects]]
+  from = "/*"              # Redirect all requests to the serverless functions
+  to = "/.netlify/functions/:splat"
+  status = 200
