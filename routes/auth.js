@@ -105,7 +105,6 @@ router.delete('/remove', verifyToken, async (req, res) => {
         const result = await User.findByIdAndDelete(req.body.id, options)
 
         if (result === null) {
-            await Notes.deleteMany({user:Types.ObjectId(req.body.id)})
             return res.status(401).json(options.notFound)
         }
         else {
