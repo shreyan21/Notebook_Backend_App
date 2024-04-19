@@ -1,12 +1,10 @@
 import { Router, json } from 'express'
 import User from '../models/User.js'
-import Notes from '../models/Notes.js'
 import bcrypt from 'bcryptjs'
 import verifyToken from '../middleware/middle.js'
 import { validationResult, body } from 'express-validator'
 import dotenv from 'dotenv'
 import jwt from 'jsonwebtoken'
-import { Types } from 'mongoose'
 const router = Router()
 dotenv.config()
 const validateInputs = [
