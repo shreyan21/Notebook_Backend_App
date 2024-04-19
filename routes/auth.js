@@ -98,14 +98,13 @@ router.post('/login', [body('email', 'Enter valid email').isEmail()
 router.delete('/remove', verifyToken, async (req, res) => {
     const options = { notFound: 'Document not found' }
     try {
-           const check=await User.findById({_id:req.body.id})
-           if(check){
-            await Notes.deleteMany({user:req.body.id})
-            await User.deleteOne(req.body.id,options)
-           }
-        // const result = await User.findByIdAndDelete(req.body.id, options)
+           
+           
+           
+        const result = await User.findByIdAndDelete(req.body.id, options)
 
-        if (check === null) {
+        if (result === null) {
+            await Notes.deleteMany({user:req.body.id})
             return res.status(401).json(options.notFound)
         }
         else {
