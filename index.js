@@ -12,11 +12,11 @@ dotenv.config()
 run()
 
 app.use(express.json())
-app.use(cors)
+app.use(cors())
 
 app.use('/auth', router1)
 app.use('/notes', router2)
 
-app.listen(process.env.PORT || 3001, () => {
-  console.log(`Example app listening on port ${process.env.PORT || 3001}`)
+app.listen(process.env.PORT||3001, () => {
+  console.log(`Example app listening on port ${process.env.PORT||3001}`)
 })
