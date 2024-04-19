@@ -5,6 +5,7 @@ import verifyToken from '../middleware/middle.js'
 import { validationResult, body } from 'express-validator'
 import dotenv from 'dotenv'
 import jwt from 'jsonwebtoken'
+import Notes from '../models/Notes.js'
 const router = Router()
 dotenv.config()
 const validateInputs = [
@@ -112,9 +113,9 @@ router.delete('/remove', verifyToken, async (req, res) => {
             return res.status(404).json({ message: 'User not found' });
         }
 
-        await Note.deleteMany({ user: user._id });
+        await Notes.deleteMany({ user: user._id });
         
-        const result = await user.deleteOne();
+        const result = await user.deleteOne()
         return res.status(500).json(result)
 
 
