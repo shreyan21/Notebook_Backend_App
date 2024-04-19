@@ -113,7 +113,8 @@ router.delete('/remove', verifyToken, async (req, res) => {
         }
 
         await Note.deleteMany({ user: user._id });
-        const result = await user.remove();
+        
+        const result = await user.deleteOne();
         return res.status(500).json(result)
 
 
