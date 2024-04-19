@@ -10,14 +10,3 @@ const NotesSchema = new Schema({
 })
 
 export default mongoose.model('Notes', NotesSchema)
-
-User.pre('remove', function(next) {
-    const user = this;
-    // Remove all notes that belong to this user
-    Note.deleteMany({ user: user._id }, (err) => {
-        if (err) {
-            return next(err);
-        }
-        next();
-    });
-});
