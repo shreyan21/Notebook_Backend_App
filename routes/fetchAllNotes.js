@@ -9,7 +9,7 @@ router.post('/addNotes', verifyToken, async (req, res) => {
    try {
 
       const note1 = await note.save()
-      return res.json(note1)
+      return res.json({note1})
    }
    catch (error) {
       return res.json(error)

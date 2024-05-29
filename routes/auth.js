@@ -11,7 +11,7 @@ dotenv.config()
 const validateInputs = [
     body('name', 'Name is required').notEmpty().isString(),
     body('email', 'Invalid email address').isEmail(),
-    body('password', 'Password must be atleast 6 characters long').isLength({ min: 6 }),
+    body('password', 'Password must be atleast 8 characters long').isLength({ min: 8 }),
 ];
 router.post('/create', validateInputs, async (req, res) => {
     const salt = await bcrypt.genSalt(10)
