@@ -57,7 +57,9 @@ router.put('/updateNotes/:id', verifyToken, async (req, res) => {
 
 
       await Notes.updateOne({ _id: req.params.id }, { $set: { title: req.body.title, description: req.body.description, tag: req.body.tag } }, { upsert: true })
-      return res.json("Updated Successfully")
+
+      let notes=await Notes.find({user:req.userid})
+      return res.json({notes})
    }
    catch (err) {
       return res.json(err)
