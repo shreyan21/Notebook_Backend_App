@@ -1,4 +1,4 @@
-import { Router, json } from 'express'
+import { Router} from 'express'
 import User from '../models/User.js'
 import bcrypt from 'bcryptjs'
 import verifyToken from '../middleware/middle.js'
@@ -7,20 +7,17 @@ import jwt from 'jsonwebtoken'
 import Notes from '../models/Notes.js'
 import multer from 'multer'
 import path from 'path'
-import { log } from 'console'
+
 import fs from 'fs'
 
 const router = Router()
 
 dotenv.config()
-<<<<<<< HEAD
-const validateInputs = [
-    body('name', 'Name is required').notEmpty().isString(),
-    body('email', 'Invalid email address').isEmail(),
-    body('password', 'Password must be atleast 8 characters long').isLength({ min: 8 }),
-];
-router.post('/create', validateInputs, async (req, res) => {
-=======
+// const validateInputs = [
+//     body('name', 'Name is required').notEmpty().isString(),
+//     body('email', 'Invalid email address').isEmail(),
+//     body('password', 'Password must be atleast 8 characters long').isLength({ min: 8 }),
+// ];
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -36,7 +33,6 @@ const upload = multer({ storage })
 
 
 router.post('/create', upload.single('image'), async (req, res) => {
->>>>>>> 2d54a69 (modified functions)
     const salt = await bcrypt.genSalt(10)
     const secPass = await bcrypt.hash(req.body.password, salt)
 
