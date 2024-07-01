@@ -6,7 +6,8 @@ async function run() {
 const password=encodeURIComponent(process.env.PASSWORD)
  
 // const MONGO_URI=`mongodb://localhost:27017/ibook`
-const MONGO_URI=`mongodb+srv://utkarsh:${password}@cluster0.o6fzdhp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+const MONGO_URI=`mongodb+srv://utkarsh:${password}@cluster0.o6fzdhp.mongodb.net/ibook?retryWrites=true&w=majority&appName=Cluster0`
+// const MONGO_URI=`mongodb+srv://utkarsh:${password}@cluster0.o6fzdhp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
 
     try {
         await mongoose.connect(MONGO_URI,
