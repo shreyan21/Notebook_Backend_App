@@ -11,7 +11,7 @@ run()
 
 
 app.use(express.json())
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({extended:false}))
 app.use(express.static('uploads'))
 app.use(cors())
 
