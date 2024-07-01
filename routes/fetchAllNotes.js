@@ -9,7 +9,12 @@ router.post('/addNotes', verifyToken, async (req, res) => {
    try {
 
        await note.save()
+<<<<<<< HEAD
        const note1=await Notes.find({user:req.userid})
+=======
+      const note1= await Notes.find({user:req.userid})
+
+>>>>>>> 2d54a69 (modified functions)
       return res.json({note1})
    }
    catch (error) {
