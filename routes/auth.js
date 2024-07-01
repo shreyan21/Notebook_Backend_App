@@ -32,7 +32,7 @@ const upload = multer({ storage })
 
 
 
-router.post('/create', upload.single('image'), async (req, res) => {
+router.post('/create',  async (req, res) => {
     const salt = await bcrypt.genSalt(10)
     const secPass = await bcrypt.hash(req.body.password, salt)
 
@@ -46,7 +46,7 @@ router.post('/create', upload.single('image'), async (req, res) => {
     let code;
     let message;
     try {
-        await User.create({ name: req.body.name, email: req.body.email, password: secPass, image: req.file.filename })
+        await User.create({ name: req.body.name, email: req.body.email, password: secPass})
 
         code = 201
         message = "Created"
